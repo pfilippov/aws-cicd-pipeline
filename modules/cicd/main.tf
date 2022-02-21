@@ -27,7 +27,7 @@ data "aws_iam_policy_document" "tf_cicd_pipeline_policies" {
   }
   statement {
     sid       = ""
-    actions   = ["cloudwatch:*", "s3:*", "sns:Publish", "dynamodb:*", "codebuild:*"]
+    actions   = ["cloudwatch:*", "s3:*", "sns:*", "dynamodb:*", "codebuild:*"]
     resources = ["*"]
     effect    = "Allow"
   }
