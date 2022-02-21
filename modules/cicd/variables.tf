@@ -55,3 +55,17 @@ variable "cicd_artefacts_bucket_name" {
   type        = string
 }
 
+variable "cicd_sns_topic_name" {
+  description = "SNS Topic name"
+  type        = string
+}
+
+variable "cicd_approval_email" {
+  description = "SNS Topic name"
+  type        = string
+}
+
+variable "cicd_approval_message" {
+  description = "Approval message sent via email"
+  type        = string
+}
