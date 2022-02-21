@@ -71,7 +71,7 @@ variable "cicd_sns_topic_name" {
 variable "cicd_approval_email" {
   description = "SNS Topic subscriber (email)"
   type        = string
-  default     = "p.g.filippov@gmail.com"
+  default     = "pavel.filippov@section6.nz"
 }
 
 variable "cicd_approval_message" {
