@@ -196,6 +196,23 @@ resource "aws_codepipeline" "cicd_pipeline" {
   }
 
   stage {
+    name = "Approve"
+
+    action {
+      name     = "Approval"
+      category = "Approval"
+      owner    = "AWS"
+      provider = "Manual"
+      version  = "1"
+
+      configuration = {
+        CustomData      = var.cicd_approval_message
+        NotificationArn = aws_sns_topic.cicd_topic.arn
+      }
+    }
+  }
+
+  stage {
     name = "Deploy"
     action {
       name            = "Deploy"
@@ -226,4 +243,14 @@ resource "aws_s3_bucket" "codepipeline_artifacts" {
 resource "aws_s3_bucket_acl" "codepipeline_artifacts" {
   bucket = aws_s3_bucket.codepipeline_artifacts.id
   acl    = "private"
+}
+
+resource "aws_sns_topic" "cicd_topic" {
+  name = var.cicd_sns_topic_name
+}
+
+resource "aws_sns_topic_subscription" "email-target" {
+  topic_arn = aws_sns_topic.cicd_topic.arn
+  protocol  = "email"
+  endpoint  = var.cicd_approval_email
 }

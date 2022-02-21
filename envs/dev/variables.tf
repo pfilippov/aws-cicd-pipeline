@@ -61,3 +61,21 @@ variable "cicd_artefacts_bucket_name" {
   type        = string
   default     = "s6-engineering-paul-demo-code-pipeline-artifacts"
 }
+
+variable "cicd_sns_topic_name" {
+  description = "SNS Topic name"
+  type        = string
+  default     = "s6-engineering-paul-demo-code-pipeline-sns-topic"
+}
+
+variable "cicd_approval_email" {
+  description = "SNS Topic subscriber (email)"
+  type        = string
+  default     = "p.g.filippov@gmail.com"
+}
+
+variable "cicd_approval_message" {
+  description = "Approval message sent via email"
+  type        = string
+  default     = "Please review output of plan and approve"
+}

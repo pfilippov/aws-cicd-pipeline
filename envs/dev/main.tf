@@ -10,6 +10,9 @@ module "cicd" {
   dockerhub_credentials          = var.dockerhub_credentials
   codestar_connector_credentials = var.codestar_connector_credentials
   cicd_artefacts_bucket_name     = var.cicd_artefacts_bucket_name
+  cicd_sns_topic_name            = var.cicd_sns_topic_name
+  cicd_approval_email            = var.cicd_approval_email
+  cicd_approval_message          = var.cicd_approval_message
   application_name               = var.application_name
   environment                    = var.environment
   tags                           = var.tags
