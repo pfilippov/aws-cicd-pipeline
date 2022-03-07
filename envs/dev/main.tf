@@ -21,6 +21,7 @@ module "cicd" {
 module "infrastructure" {
   source = "../../modules/infrastructure"
 
+  vpc_cidr_block   = var.vpc_cidr_block
   aws_region       = var.aws_region
   application_name = var.application_name
   environment      = var.environment

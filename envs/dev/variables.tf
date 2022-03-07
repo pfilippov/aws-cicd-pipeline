@@ -79,3 +79,9 @@ variable "cicd_approval_message" {
   type        = string
   default     = "Please review output of plan and approve"
 }
+
+variable "vpc_cidr_block" {
+  description = "VPC CIDR Block"
+  type        = string
+  default     = "1.2.0.0/24"
+}
