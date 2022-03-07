@@ -83,5 +83,5 @@ variable "cicd_approval_message" {
 variable "vpc_cidr_block" {
   description = "VPC CIDR Block"
   type        = string
-  default     = "1.2.0.0/24"
+  default     = "1.2.0.0/28"
 }
