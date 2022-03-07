@@ -16,3 +16,7 @@ variable "tags" {
     costgroup = string
   })
 }
+
+variable "vpc_cidr_block" {
+  type        = string
+}
